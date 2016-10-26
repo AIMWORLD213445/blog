@@ -15,6 +15,14 @@ body {
     min-height: 500px;
     background-color: #36454f;
     color: white;
+    input {
+      color: black;
+    }
+  }
+  .post-detail {
+    div {
+      display: inline;
+    }
   }
 
   #main-content {

@@ -14,7 +14,9 @@ export default Ember.Component.extend({
         body: this.get('body'),
         timestamp: new Date()
       };
-      console.log(params.timestamp);
+      this.set('username', "");
+      this.set('title', "");
+      this.set('body', "");
       this.set('addNewPost', false);
       this.sendAction('savePost', params);
     }

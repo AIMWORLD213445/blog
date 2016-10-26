@@ -1,3 +1,5 @@
-{{post-detail post=model deletePost="deletePost"}}
+<div class="post-detail">
+  {{post-detail post=model deletePost="deletePost"}}
 
-<button class="btn btn-sm btn-warning" {{action 'delete' post}}>Delete Post</button>
+  {{new-comment saveComment="saveComment" post=model}}
+</div>
