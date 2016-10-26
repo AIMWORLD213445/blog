@@ -1,5 +1,16 @@
-<div class="container">
-  <h1>Lorem Ipsum Blog</h1>
-  <hr>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    {{#link-to 'index'}}
+      <div class="navbar-header">
+        <a class="navbar-brand">Lorem Ipsum News</a>
+      </div>
+    {{/link-to}}
+    <ul class="nav navbar-nav">
+      <li>{{#link-to 'about'}}About{{/link-to}}</li>
+      <li>{{#link-to 'contact'}}Contact{{/link-to}}</li>
+    </ul>
+  </div>
+</nav>
+<div class="container" id="main-content">
   {{outlet}}
 </div>

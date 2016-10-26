@@ -1,7 +1,10 @@
 <div class="row">
-  <div class="col-md-12">
-    <h3>{{post.title}}</h3>
-    <p>{{post.username}} | {{post.timestamp}}</p>
-    <p>{{post.body}}</p>
+  <div class="col-md-12 post-tile">
+    {{#link-to 'post' post.id}}
+      <h4>{{post.title}}</h4>
+      <p>{{post.username}} | {{moment-format post.timestamp "lll"}}</p>
+      <p>{{excerpt post.body}}</p>
+    {{/link-to}}
+    <button class="btn btn-sm btn-warning" {{action 'delete' post}}>Delete Post</button>
   </div>
 </div>
