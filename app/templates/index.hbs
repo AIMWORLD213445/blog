@@ -1,12 +1,17 @@
 <div class="row">
   <div class="col-md-8 well">
     <h3>Blog Feed</h3>
+    <p>{{reverseEach model.posts}}</p>
     {{#each model.posts as |post|}}
       {{post-tile post=post update="update" deletePost="deletePost"}}
     {{/each}}
   </div>
   <div class="col-md-4 well well-sidebar">
-    <h3>Quick Links</h3>
-    {{new-post savePost="savePost"}}
+    {{new-post savePost="savePost" categories=model.categories}}
+    <hr>
+    {{new-category saveCategory="saveCategory"}}
+    {{#each model.categories as |category|}}
+      <p>{{category.name}}</p>
+    {{/each}}
   </div>
 </div>

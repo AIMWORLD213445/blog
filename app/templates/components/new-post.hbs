@@ -1,22 +1,25 @@
-{{#if addNewPost}}
-<h1> Make a new blog entry:</h1>
-<div>
-  <form>
-    <div class="form-group">
-      <label for="username">Username</label>
-      {{input class="form-control" value=username id="username"}}
-    </div>
-    <div class="form-group">
-      <label for="title">Title</label>
-      {{input class="form-control" value=title id="title"}}
-    </div>
-    <div class="form-group">
-      <label for="body">Body</label>
-      {{input class="form-control" value=body id="body"}}
-    </div>
-    <button class="btn btn-lg btn-primary" {{action 'savePost'}}>Save</button>
-  </form>
-</div>
-{{else}}
-  <button class="btn btn-lg btn-success" {{action 'newPostFormShow'}}>Make a new post</button>
-{{/if}}
+<h3>Write a new post</h3>
+<form>
+  <div class="form-group">
+    <label for="username">Username</label>
+    {{input class="form-control" value=username id="username"}}
+  </div>
+  <div class="form-group">
+    <label for="title">Title</label>
+    {{input class="form-control" value=title id="title"}}
+  </div>
+  <div class="form-group">
+    <label for="body">Body</label>
+    {{input class="form-control" value=body id="body"}}
+  </div>
+  <div class="form-group">
+    <label for="category">Category</label>
+    <select class="form-control" onchange={{action 'selectCategory' value="target.value"}}>
+      <option></option>
+      {{#each categories as |categoryChoice|}}
+        <option value={{categoryChoice}} selected={{eq category categoryChoice}}>{{categoryChoice.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <button class="btn btn-primary" {{action 'savePost'}}>Save</button>
+</form>
