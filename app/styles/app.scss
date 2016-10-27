@@ -1,4 +1,9 @@
 body {
+  background-image: url(https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=57465abcce7fae272dae624612b751cc);
+  font-family: 'Roboto', sans-serif;
+  h3 {
+    font-family: 'Special Elite', cursive;
+  }
   a {
     color: #333;
     &:hover {
@@ -6,6 +11,14 @@ body {
       text-decoration: none;
     }
   }
+  .navbar-inverse {
+    .navbar-brand {
+      font-family: 'Special Elite', cursive;
+      color: white;
+      font-size: 25px;
+    }
+  }
+
   .post-tile {
     border-bottom: 2px solid darkgrey;
     margin-bottom: 15px;

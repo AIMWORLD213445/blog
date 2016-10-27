@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 well">
+    <h3>Blog Feed</h3>
+    {{reverseEach model.posts}}
+    {{#each model.posts as |post index|}}
+      {{#if (postCount index)}}
+        {{post-tile post=post update="update" deletePost="deletePost" }}
+      {{/if}}
+    {{/each}}
+    <a href="/"><h4>Back to front page</h4></a>
+  </div>
+</div>

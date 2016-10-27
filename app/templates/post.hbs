@@ -1,5 +1,9 @@
-<div class="post-detail">
-  {{post-detail post=model deletePost="deletePost"}}
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="post-detail well">
+      {{post-detail post=model deletePost="deletePost" deleteComment="deleteComment"}}
 
-  {{new-comment saveComment="saveComment" post=model}}
+      {{new-comment saveComment="saveComment" post=model}}
+    </div>
+  </div>
 </div>

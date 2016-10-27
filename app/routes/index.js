@@ -18,21 +18,12 @@ export default Ember.Route.extend({
       });
       post.save();
       this.transitionTo('index');
+
     },
     savePost(params) {
       var newPost = this.store.createRecord('post', params);
-      debugger;
-      var category = params.category;
-      console.log(category);
-      category.get('posts').addObject(newPost);
-      newPost.save().then(function(){
-        return category.save();
-      });
-      this.transitionTo('index');
-    },
-    saveCategory(params) {
-      var newCategory = this.store.createRecord('category', params);
-      newCategory.save();
+      newPost.save();
+      document.location.reload();
       this.transitionTo('index');
     },
     deletePost(post) {
